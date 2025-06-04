@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { VitePWA } from "vite-plugin-pwa";
 
-// Otomatis base "/" saat development, "/story-app/" saat production
 const isProd = process.env.NODE_ENV === "production";
 const base = isProd ? "/story-app/" : "/";
 
@@ -34,7 +33,15 @@ export default defineConfig({
           },
         ],
       },
-      includeAssets: ["favicon.png", "robots.txt", "apple-touch-icon.png"],
+      includeAssets: [
+        "favicon.png",
+        "robots.txt",
+        "apple-touch-icon.png",
+        "icons/icon-192x192.png",
+        "icons/iconku2-512x512.png",
+        "screenshots/home-desktop.png",
+        "screenshots/home-mobile2.png",
+      ],
       manifest: {
         name: "StoryApp",
         short_name: "StoryApp",
@@ -42,7 +49,7 @@ export default defineConfig({
         theme_color: "#3b82f6",
         background_color: "#ffffff",
         display: "standalone",
-        start_url: base, // mengikuti base, jadi "/" di dev, "/story-app/" di prod
+        start_url: base,
         scope: base,
         icons: [
           {

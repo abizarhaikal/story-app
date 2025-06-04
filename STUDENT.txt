@@ -1,2 +1,2 @@
-APP_URL=<url_aplikasi>
+APP_URL=https://abizarhaikal.github.io/story-app/#/
 MAP_SERVICE_API_KEY=S0PyXTPYXKC5edy14urs
