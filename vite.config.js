@@ -19,20 +19,9 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: "autoUpdate",
-      strategies: "generateSW",
-      workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/story-api\.dicoding\.dev\//,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "story-api",
-              networkTimeoutSeconds: 3,
-            },
-          },
-        ],
-      },
+      strategies: "injectManifest",
+      srcDir: "src", // <--- folder custom sw.js kamu
+      filename: "sw.js", // <--- nama file custom sw.js kamu
       includeAssets: [
         "favicon.png",
         "robots.txt",
